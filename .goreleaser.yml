@@ -25,27 +25,5 @@ archives:
   - formats: [binary]
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
-dockers_v2:
-  - images:
-      - "ghcr.io/woodleighschool/epson-exporter"
-    tags:
-      - "{{ .Version }}"
-      - latest
-    dockerfile: Dockerfile
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    extra_files:
-      - go.mod
-      - go.sum
-      - cmd
-      - internal
-    labels:
-      "org.opencontainers.image.created": "{{ .Date }}"
-      "org.opencontainers.image.name": "{{ .ProjectName }}"
-      "org.opencontainers.image.revision": "{{ .FullCommit }}"
-      "org.opencontainers.image.source": "{{ .GitURL }}"
-      "org.opencontainers.image.version": "{{ .Version }}"
-
 release:
   draft: false
