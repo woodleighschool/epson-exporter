@@ -1,0 +1,10 @@
+modules:
+  default:
+    timeout: 5s
+    product_status_path: /PRESENTATION/ADVANCED/INFO_PRTINFO/TOP
+    usage_status_path: /PRESENTATION/ADVANCED/INFO_MENTINFO/TOP
+    network_status_path: /PRESENTATION/ADVANCED/INFO_NWINFO/TOP
+    hardware_status_path: /PRESENTATION/ADVANCED/INFO_BEHAVIORINFO/TOP
+    http_client_config:
+      tls_config:
+        insecure_skip_verify: true
