@@ -145,7 +145,9 @@ func parseConsumables(root *html.Node, values map[string]string) []Consumable {
 			continue
 		}
 
-		level, ok := tankLevel(item)
+		warning := firstDescendantWithClass(item, "inkst") != nil
+		emptyInk := descendantImageContains(item, "Icn_No")
+		level, ok := tankLevel(item, emptyInk)
 		if !ok {
 			continue
 		}
@@ -155,13 +157,13 @@ func parseConsumables(root *html.Node, values map[string]string) []Consumable {
 			Color:        color,
 			Model:        consumableModel(slot, values),
 			LevelPercent: level,
-			Warning:      firstDescendantWithClass(item, "inkst") != nil,
+			Warning:      warning,
 		})
 	}
 	return consumables
 }
 
-func tankLevel(item *html.Node) (float64, bool) {
+func tankLevel(item *html.Node, empty bool) (float64, bool) {
 	for node := range nodes(item) {
 		if node.Type != html.ElementNode || node.Data != "div" || !hasClass(node, "tank") {
 			continue
@@ -171,6 +173,9 @@ func tankLevel(item *html.Node) (float64, bool) {
 			return 0, false
 		}
 		level, err := strconv.ParseFloat(matches[1][1], 64)
+		if empty && err == nil && level > 0 {
+			return 0, true
+		}
 		return level, err == nil
 	}
 	return 0, false

@@ -36,6 +36,54 @@ func TestParseSnapshotFromAnonymizedWorkForceFixture(t *testing.T) {
 	assertPagesByInterface(t, snapshot, "standard_network", "color", 4571)
 }
 
+func TestTankLevelTreatsNoInkIconAsEmpty(t *testing.T) {
+	doc, err := parseHTML([]byte(`
+		<html><body>
+			<ul>
+				<li class="tank">
+					<div class="tank" style="background:linear-gradient(to top, #000000 0%, #000000 1%, #FFFFFF 1%, #FFFFFF 100%);"><img class="inkst" src="Icn_No.PNG"></div>
+					<div class="clrname">BK</div>
+				</li>
+			</ul>
+		</body></html>
+	`))
+	if err != nil {
+		t.Fatalf("parseHTML returned error: %v", err)
+	}
+
+	consumables := parseConsumables(doc, nil)
+	if len(consumables) != 1 {
+		t.Fatalf("got %d consumables, want 1", len(consumables))
+	}
+	if consumables[0].LevelPercent != 0 {
+		t.Fatalf("level=%v want 0", consumables[0].LevelPercent)
+	}
+}
+
+func TestTankLevelLeavesIcnLowAsParsedPercent(t *testing.T) {
+	doc, err := parseHTML([]byte(`
+		<html><body>
+			<ul>
+				<li class="tank">
+					<div class="tank" style="background:linear-gradient(to top, #00AEEF 0%, #00AEEF 3%, #FFFFFF 3%, #FFFFFF 100%);"><img class="inkst" src="Icn_low.PNG"></div>
+					<div class="clrname">BK</div>
+				</li>
+			</ul>
+		</body></html>
+	`))
+	if err != nil {
+		t.Fatalf("parseHTML returned error: %v", err)
+	}
+
+	consumables := parseConsumables(doc, nil)
+	if len(consumables) != 1 {
+		t.Fatalf("got %d consumables, want 1", len(consumables))
+	}
+	if consumables[0].LevelPercent != 3 {
+		t.Fatalf("level=%v want 3", consumables[0].LevelPercent)
+	}
+}
+
 func parseFixtureSnapshot(t *testing.T) Snapshot {
 	t.Helper()
 	snapshot, err := ParseSnapshot(
