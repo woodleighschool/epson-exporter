@@ -1,0 +1,14 @@
+.git/
+.gitignore
+.dockerignore
+Dockerfile.dockerignore
+
+.env
+.env.*
+
+/epson_exporter
+/bin/
+/build/
+/tmp/
+/.gocache/
+*.log
