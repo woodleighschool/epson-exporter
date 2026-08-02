@@ -30,7 +30,7 @@ type Module struct {
 	HTTPClientConfig   promconfig.HTTPClientConfig `yaml:"http_client_config"`
 }
 
-func (m *Module) UnmarshalYAML(unmarshal func(interface{}) error) error {
+func (m *Module) UnmarshalYAML(unmarshal func(any) error) error {
 	type plain Module
 	*m = Module{
 		HTTPClientConfig: defaultHTTPClientConfig(),

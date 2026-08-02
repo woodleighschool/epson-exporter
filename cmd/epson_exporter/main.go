@@ -82,7 +82,7 @@ func run() int {
 
 func logRequests(next http.Handler, logger *slog.Logger) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		logger.Debug("request", "method", r.Method, "path", r.URL.Path)
+		logger.DebugContext(r.Context(), "request", "method", r.Method, "path", r.URL.Path)
 		next.ServeHTTP(w, r)
 	})
 }
