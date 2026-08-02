@@ -3,7 +3,7 @@ go = "1.26.5"
 golangci-lint = "2.12.2"
 lefthook = "2.1.10"
 zizmor = "1.28.0"
-oxfmt = "0.60.0"
+oxfmt = "0.61.0"
 "npm:@commitlint/cli" = "21.2.1"
 
 [settings]
@@ -43,6 +43,10 @@ run = "golangci-lint run"
 [tasks.go-lint-fix]
 description = "Run Go linters and apply fixes"
 run = "golangci-lint run --fix"
+
+[tasks.lint-fix]
+description = "Run linters and apply fixes"
+depends = ["go-lint-fix"]
 
 [tasks.lint]
 description = "Run linters"
