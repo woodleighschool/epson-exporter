@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.4](https://github.com/woodleighschool/epson-exporter/compare/0.1.3...0.1.4) (2026-08-04)
+
+
+### Features
+
+* **deps:** update prometheus group ([#16](https://github.com/woodleighschool/epson-exporter/issues/16)) ([9b1d4c2](https://github.com/woodleighschool/epson-exporter/commit/9b1d4c22f90dfb1905b673b02b69b7d6ba2a0173))
+
+
+### Bug Fixes
+
+* **ci:** disable automatic mise installs ([18fe6c7](https://github.com/woodleighschool/epson-exporter/commit/18fe6c78ceb48cf7cea100958fa7561c7746824d))
+* **deps:** update module github.com/prometheus/common (v0.70.0 → v0.70.1) ([#9](https://github.com/woodleighschool/epson-exporter/issues/9)) ([02657d9](https://github.com/woodleighschool/epson-exporter/commit/02657d98ed874fb480e4b9e138d3c67cb651edd0))
+* **deps:** update module go.yaml.in/yaml/v3 (v3.0.4 → v3.0.5) ([#10](https://github.com/woodleighschool/epson-exporter/issues/10)) ([a5f6b35](https://github.com/woodleighschool/epson-exporter/commit/a5f6b35650303b58dc33c5acdcb66045b3f132f4))
+* resolve Go lint findings ([e478478](https://github.com/woodleighschool/epson-exporter/commit/e47847815bc3de95ca6136c271b8ecb824b79f91))
+
+
+### Code Refactoring
+
+* apply Go lint fixes ([91a75df](https://github.com/woodleighschool/epson-exporter/commit/91a75df43056a9ff7142727561340955e2c63fa1))
+
 ## [0.1.3](https://github.com/woodleighschool/epson-exporter/compare/v0.1.2...0.1.3) (2026-07-28)
 
 
