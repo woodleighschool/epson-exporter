@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"regexp"
+	"slices"
 	"strconv"
 	"strings"
 	"time"
@@ -578,12 +579,7 @@ func descendantImageContains(root *html.Node, value string) bool {
 }
 
 func hasClass(node *html.Node, className string) bool {
-	for _, class := range strings.Fields(attr(node, "class")) {
-		if class == className {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(strings.Fields(attr(node, "class")), className)
 }
 
 func attr(node *html.Node, name string) string {

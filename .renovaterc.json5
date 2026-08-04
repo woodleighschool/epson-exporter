@@ -7,5 +7,12 @@
       matchManagers: ["mise"],
       minimumReleaseAge: "12 hours",
     },
+    {
+      matchManagers: ["gomod"],
+      matchPackageNames: ["github.com/prometheus/**"],
+      groupName: "Prometheus Group",
+      groupSlug: "prometheus",
+      groupSingleUpdates: true,
+    },
   ],
 }
