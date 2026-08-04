@@ -15,7 +15,7 @@ import (
 )
 
 func TestProbeRequiresTarget(t *testing.T) {
-	server := testServer(t, nil)
+	server := testServer(t)
 
 	req := httptest.NewRequest(http.MethodGet, "/probe", nil)
 	rec := httptest.NewRecorder()
@@ -26,7 +26,7 @@ func TestProbeRequiresTarget(t *testing.T) {
 }
 
 func TestProbeUnknownModule(t *testing.T) {
-	server := testServer(t, nil)
+	server := testServer(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target=http://example.test&module=missing", nil)
 	rec := httptest.NewRecorder()
 	server.Probe(rec, req)
@@ -41,7 +41,7 @@ func TestProbeHealthy(t *testing.T) {
 	}))
 	defer device.Close()
 
-	server := testServer(t, nil)
+	server := testServer(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target="+url.QueryEscape(device.URL), nil)
 	rec := httptest.NewRecorder()
 	server.Probe(rec, req)
@@ -63,12 +63,12 @@ func TestProbeHealthy(t *testing.T) {
 }
 
 func TestProbeUpstreamFailureIsMetricFailure(t *testing.T) {
-	device := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	device := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
 		http.Error(w, "offline", http.StatusBadGateway)
 	}))
 	defer device.Close()
 
-	server := testServer(t, nil)
+	server := testServer(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target="+url.QueryEscape(device.URL), nil)
 	rec := httptest.NewRecorder()
 	server.Probe(rec, req)
@@ -81,23 +81,21 @@ func TestProbeUpstreamFailureIsMetricFailure(t *testing.T) {
 	}
 }
 
-func testServer(t *testing.T, cfg *config.Config) *Server {
+func testServer(t *testing.T) *Server {
 	t.Helper()
-	if cfg == nil {
-		cfg = &config.Config{
-			Modules: map[string]config.Module{
-				"default": {
-					Timeout:            5 * time.Second,
-					ProductStatusPath:  "/PRESENTATION/ADVANCED/INFO_PRTINFO/TOP",
-					UsageStatusPath:    "/PRESENTATION/ADVANCED/INFO_MENTINFO/TOP",
-					NetworkStatusPath:  "/PRESENTATION/ADVANCED/INFO_NWINFO/TOP",
-					HardwareStatusPath: "/PRESENTATION/ADVANCED/INFO_BEHAVIORINFO/TOP",
-					HTTPClientConfig:   promconfig.DefaultHTTPClientConfig,
-				},
+	cfg := config.Config{
+		Modules: map[string]config.Module{
+			"default": {
+				Timeout:            5 * time.Second,
+				ProductStatusPath:  "/PRESENTATION/ADVANCED/INFO_PRTINFO/TOP",
+				UsageStatusPath:    "/PRESENTATION/ADVANCED/INFO_MENTINFO/TOP",
+				NetworkStatusPath:  "/PRESENTATION/ADVANCED/INFO_NWINFO/TOP",
+				HardwareStatusPath: "/PRESENTATION/ADVANCED/INFO_BEHAVIORINFO/TOP",
+				HTTPClientConfig:   promconfig.DefaultHTTPClientConfig,
 			},
-		}
+		},
 	}
-	return &Server{Config: *cfg, MetricsPath: "/metrics"}
+	return &Server{Config: cfg, MetricsPath: "/metrics"}
 }
 
 func serveProbeFixture(t *testing.T, w http.ResponseWriter, reqPath string) {
