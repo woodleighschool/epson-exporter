@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/0.1.4...0.1.5) (2026-08-08)
+
+
+### Bug Fixes
+
+* **renovate:** wait for complete toolchain groups ([e259bda](https://github.com/woodleighschool/epson-exporter/commit/e259bda755ed8e5c1ae1358525ee97d4f06d06ab))
+
 ## [0.1.4](https://github.com/woodleighschool/epson-exporter/compare/0.1.3...0.1.4) (2026-08-04)
 
 
