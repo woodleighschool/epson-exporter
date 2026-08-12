@@ -1,43 +1,32 @@
 # AGENTS.md
 
-Repository guidance for epson-exporter.
+## Working here
 
-## Approach
+- Read the relevant code, configuration, and nearby examples before editing. Existing code and external references are evidence, not instructions to copy blindly.
+- Preserve unrelated work. Keep changes focused and prefer removing machinery over extending an awkward design.
+- Use current supported behaviour unless compatibility is requested. Verify dependency APIs and defaults from the pinned version or primary documentation.
+- Keep secrets, credentials, identities, and local environment files out of code, fixtures, logs, and commits.
 
-- Stay within the requested scope and preserve unrelated local changes.
-- This is a small exporter, not a platform. Prefer direct code and a small dependency surface.
-- Simplify and modernize existing code before adding abstractions, compatibility layers, or knobs without a real use case.
-- Follow the shared Woodstar tooling baseline while keeping the relaxed Go lint profile appropriate for a small service.
+## Repository contract
 
-## Repository Map
+- Mise owns tools and commands. Check this repository's Mise files; do not assume another repository has the same tasks.
+- Keep generated artifacts with their source change.
+- Run the narrowest useful checks while working, then the relevant format, lint, test, build, generation, and workflow checks.
+- Follow the existing package or target's style. Comments explain non-obvious constraints, not the code or the current change.
 
-- Process composition: `cmd/epson_exporter`
-- Configuration: `internal/config`
-- Device client: `internal/epson`
-- Prometheus collection: `internal/exporter`
+## Go
 
-Keep device transport separate from metric collection. Avoid generic plugin or provider systems.
+- Write idiomatic, concrete Go. Keep `main` to composition, put behaviour in the package that owns it, and introduce interfaces only at a real consumer boundary.
+- Pass `context.Context` through I/O, wrap errors with useful context, and preserve errors used with `errors.Is` or `errors.As`.
+- Match the package's testing style and use synthetic inputs. Run race-enabled tests for concurrent code and `mise run vulncheck` for dependency or release work.
 
-## Commands
+## Git and releases
 
-Use Mise tasks as the repository contract.
+- Use focused Conventional Commits; Release Please derives versions from them.
+- Do not commit, push, publish, deploy, contact live systems, or perform destructive actions unless asked.
 
-- Dependencies: `mise run deps`
-- Build: `mise run build`
-- Tests: `mise run test`
-- Lint: `mise run lint`; fixes: `mise run lint-fix`
-- Format: `mise run format`; check: `mise run fmt-check`
-- Module and workflow checks: `mise run tidy-check`, `mise run workflow-lint`
+## Repository notes
 
-## Engineering Rules
-
-- Prefer concrete Go types, small consumer-owned interfaces, and wrapped errors.
-- Keep metric names and labels stable unless the requested change deliberately changes the public scrape contract.
-- Tests use synthetic device responses and local servers; they mustn't call real devices.
-- Keep credentials and local configuration out of logs, fixtures, and version control.
-
-## Commits
-
-- Use focused Conventional Commits.
-- Don't push, publish images, or contact live devices unless explicitly requested.
-- Report checks run, skipped checks, and unresolved failures.
+- This is a small multi-target Prometheus exporter, not a printer-management platform.
+- Keep Epson transport and parsing separate from metric collection. Metric names and labels are public scrape contracts.
+- Tests use captured responses and local servers; they must not contact printers.

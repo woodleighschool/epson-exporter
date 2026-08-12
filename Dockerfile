@@ -9,6 +9,10 @@ FROM --platform=$BUILDPLATFORM golang:${GO_VERSION}-alpine AS builder
 
 ARG TARGETOS
 ARG TARGETARCH
+ARG VERSION=dev
+ARG COMMIT=unknown
+ARG BRANCH=unknown
+ARG BUILD_DATE=unknown
 
 RUN apk add --no-cache upx
 WORKDIR /workspace
@@ -21,7 +25,9 @@ COPY cmd/ cmd/
 COPY internal/ internal/
 
 RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} \
-    go build -trimpath -ldflags "-s -w" -o epson_exporter ./cmd/epson_exporter
+    go build -trimpath \
+    -ldflags "-s -w -X github.com/prometheus/common/version.Version=${VERSION} -X github.com/prometheus/common/version.Revision=${COMMIT} -X github.com/prometheus/common/version.Branch=${BRANCH} -X github.com/prometheus/common/version.BuildUser=docker -X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}" \
+    -o epson_exporter ./cmd/epson_exporter
 RUN upx --best --lzma epson_exporter
 
 # ---- Runtime --------------------------------------------------------------

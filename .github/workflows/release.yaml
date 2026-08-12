@@ -23,6 +23,7 @@ jobs:
     permissions:
       contents: read
     outputs:
+      build-date: ${{ steps.versions.outputs.build-date }}
       go-version: ${{ steps.versions.outputs.go-version }}
     steps:
       - name: Checkout
@@ -39,7 +40,11 @@ jobs:
 
       - name: Resolve versions
         id: versions
-        run: echo "go-version=$(mise config get tools.go)" >> "$GITHUB_OUTPUT"
+        run: |
+          {
+            echo "build-date=$(git show -s --format=%cI HEAD)"
+            echo "go-version=$(mise config get tools.go)"
+          } >> "$GITHUB_OUTPUT"
 
   release:
     name: Release
@@ -51,6 +56,10 @@ jobs:
     uses: docker/github-builder/.github/workflows/build.yml@a492c6d04fd3315f67230809b44d60cc0acd50b3 # v1.16.0
     with:
       build-args: |
+        VERSION=${{ github.ref_name }}
+        COMMIT=${{ github.sha }}
+        BRANCH=${{ github.ref_name }}
+        BUILD_DATE=${{ needs.versions.outputs.build-date }}
         GO_VERSION=${{ needs.versions.outputs.go-version }}
       cache: true
       meta-images: ghcr.io/${{ github.repository }}
