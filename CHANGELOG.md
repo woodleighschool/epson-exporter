@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/0.1.4...0.1.5) (2026-08-21)
+
+
+### Features
+
+* **container:** update image golang (1.26.6 → 1.27.0) ([#22](https://github.com/woodleighschool/epson-exporter/issues/22)) ([dcefd70](https://github.com/woodleighschool/epson-exporter/commit/dcefd700033195cf3498b6e075a9f8f641ea7e36))
+* **go:** update module golang.org/x/net (v0.57.0 → v0.58.0) ([#21](https://github.com/woodleighschool/epson-exporter/issues/21)) ([11def77](https://github.com/woodleighschool/epson-exporter/commit/11def77815f5f5ba449f5dd9fc2a0cfbab807fe0))
+
+
+### Bug Fixes
+
+* **deps:** update indirect dependencies ([c280cb6](https://github.com/woodleighschool/epson-exporter/commit/c280cb68fd54e21a399456ebb4b230fa9640f034))
+* **renovate:** wait for complete toolchain groups ([e259bda](https://github.com/woodleighschool/epson-exporter/commit/e259bda755ed8e5c1ae1358525ee97d4f06d06ab))
+* **tooling:** group toolchain updates ([1675e87](https://github.com/woodleighschool/epson-exporter/commit/1675e878db05308d90528cad41809be3ce06d36f))
+
 ## [0.1.4](https://github.com/woodleighschool/epson-exporter/compare/0.1.3...0.1.4) (2026-08-04)
 
 
