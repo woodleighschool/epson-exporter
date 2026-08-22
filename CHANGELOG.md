@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/0.1.5...0.1.6) (2026-08-22)
+
+
+### Documentation
+
+* align repository agent guidance ([e1f80f2](https://github.com/woodleighschool/epson-exporter/commit/e1f80f248eb26c79bd2408018bdbbbb626c98070))
+
+
+### Miscellaneous Chores
+
+* align ignore rules ([d7e1d7f](https://github.com/woodleighschool/epson-exporter/commit/d7e1d7f5f6a6cc26a3323405d070cbe411fabf2c))
+* align repository conventions ([71f7cc5](https://github.com/woodleighschool/epson-exporter/commit/71f7cc593a047320791f613f0ebfb5eb4fe30f8d))
+* **release-please:** sync configuration ([2ed36d2](https://github.com/woodleighschool/epson-exporter/commit/2ed36d29dd79fcb6e0fd3e2720778ea8dd7417b5))
+
 ## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/0.1.4...0.1.5) (2026-08-21)
 
 
