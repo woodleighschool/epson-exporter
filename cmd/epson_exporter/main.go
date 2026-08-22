@@ -20,7 +20,7 @@ import (
 )
 
 var (
-	configFile   = kingpin.Flag("config.file", "Optional Epson exporter configuration file. If unset, the built-in default module is used.").String()
+	configFile   = kingpin.Flag("config.file", "Optional configuration file. If unset, the built-in default module is used.").String()
 	configCheck  = kingpin.Flag("config.check", "Validate the config file and exit.").Default("false").Bool()
 	metricsPath  = kingpin.Flag("web.telemetry-path", "Path under which to expose exporter metrics.").Default("/metrics").String()
 	toolkitFlags = kingpinflag.AddFlags(kingpin.CommandLine, ":9788")
