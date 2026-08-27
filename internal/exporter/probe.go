@@ -2,22 +2,34 @@ package exporter
 
 import (
 	"fmt"
+	"log/slog"
 	"net/http"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
+	"github.com/woodleighschool/epson-exporter/internal/config"
 	"github.com/woodleighschool/epson-exporter/internal/epson"
 )
 
-func (s *Server) Probe(w http.ResponseWriter, r *http.Request) {
+// NewProbeHandler returns a handler that collects metrics from one configured printer target.
+func NewProbeHandler(cfg config.Config, logger *slog.Logger) http.Handler {
+	return &probeHandler{config: cfg, logger: logger}
+}
+
+type probeHandler struct {
+	config config.Config
+	logger *slog.Logger
+}
+
+func (h *probeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	target := r.URL.Query().Get("target")
 	moduleName := r.URL.Query().Get("module")
 	if moduleName == "" {
 		moduleName = "default"
 	}
 
-	module, ok := s.Config.Modules[moduleName]
+	module, ok := h.config.Modules[moduleName]
 	if !ok {
 		http.Error(w, fmt.Sprintf("unknown module %q", moduleName), http.StatusBadRequest)
 		return
@@ -32,7 +44,7 @@ func (s *Server) Probe(w http.ResponseWriter, r *http.Request) {
 		UsageStatus:    module.UsageStatusPath,
 		NetworkStatus:  module.NetworkStatusPath,
 		HardwareStatus: module.HardwareStatusPath,
-	}, module.HTTPClientConfig, s.Logger)
+	}, module.HTTPClientConfig, h.logger)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
@@ -42,7 +54,7 @@ func (s *Server) Probe(w http.ResponseWriter, r *http.Request) {
 	registry.MustRegister(&epson.Collector{
 		Client:  client,
 		Timeout: module.Timeout,
-		Logger:  s.Logger,
+		Logger:  h.logger,
 	})
 
 	promhttp.HandlerFor(registry, promhttp.HandlerOpts{}).ServeHTTP(w, r)

@@ -15,21 +15,21 @@ import (
 )
 
 func TestProbeRequiresTarget(t *testing.T) {
-	server := testServer(t)
+	handler := testProbeHandler(t)
 
 	req := httptest.NewRequest(http.MethodGet, "/probe", nil)
 	rec := httptest.NewRecorder()
-	server.Probe(rec, req)
+	handler.ServeHTTP(rec, req)
 	if rec.Code != http.StatusBadRequest {
 		t.Fatalf("status = %d, want 400", rec.Code)
 	}
 }
 
 func TestProbeUnknownModule(t *testing.T) {
-	server := testServer(t)
+	handler := testProbeHandler(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target=http://example.test&module=missing", nil)
 	rec := httptest.NewRecorder()
-	server.Probe(rec, req)
+	handler.ServeHTTP(rec, req)
 	if rec.Code != http.StatusBadRequest {
 		t.Fatalf("status = %d, want 400", rec.Code)
 	}
@@ -41,10 +41,10 @@ func TestProbeHealthy(t *testing.T) {
 	}))
 	defer device.Close()
 
-	server := testServer(t)
+	handler := testProbeHandler(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target="+url.QueryEscape(device.URL), nil)
 	rec := httptest.NewRecorder()
-	server.Probe(rec, req)
+	handler.ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
 		t.Fatalf("status = %d, want 200: %s", rec.Code, rec.Body.String())
@@ -68,10 +68,10 @@ func TestProbeUpstreamFailureIsMetricFailure(t *testing.T) {
 	}))
 	defer device.Close()
 
-	server := testServer(t)
+	handler := testProbeHandler(t)
 	req := httptest.NewRequest(http.MethodGet, "/probe?target="+url.QueryEscape(device.URL), nil)
 	rec := httptest.NewRecorder()
-	server.Probe(rec, req)
+	handler.ServeHTTP(rec, req)
 
 	if rec.Code != http.StatusOK {
 		t.Fatalf("status = %d, want 200: %s", rec.Code, rec.Body.String())
@@ -81,7 +81,7 @@ func TestProbeUpstreamFailureIsMetricFailure(t *testing.T) {
 	}
 }
 
-func testServer(t *testing.T) *Server {
+func testProbeHandler(t *testing.T) http.Handler {
 	t.Helper()
 	cfg := config.Config{
 		Modules: map[string]config.Module{
@@ -95,7 +95,7 @@ func testServer(t *testing.T) *Server {
 			},
 		},
 	}
-	return &Server{Config: cfg, MetricsPath: "/metrics"}
+	return NewProbeHandler(cfg, nil)
 }
 
 func serveProbeFixture(t *testing.T, w http.ResponseWriter, reqPath string) {
