@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/0.1.5...0.1.6) (2026-08-27)
+
+
+### Features
+
+* **go:** update prometheus group ([#31](https://github.com/woodleighschool/epson-exporter/issues/31)) ([d8ca0fb](https://github.com/woodleighschool/epson-exporter/commit/d8ca0fb20e9746f3562000ac7eb7714f3eac4315))
+
+
+### Code Refactoring
+
+* adopt exporter toolkit bootstrap ([5d61b33](https://github.com/woodleighschool/epson-exporter/commit/5d61b33bb50dac92586cba0348d7da040dc4a6d0))
+
+
+### Documentation
+
+* align repository agent guidance ([e1f80f2](https://github.com/woodleighschool/epson-exporter/commit/e1f80f248eb26c79bd2408018bdbbbb626c98070))
+* clarify usage and releases ([e72e831](https://github.com/woodleighschool/epson-exporter/commit/e72e8314436ee692602e7b7821d1f0f1b0147f22))
+
+
+### Continuous Integration
+
+* **github-action:** update action docker/github-builder (v1.16.0 → v1.17.0) ([#29](https://github.com/woodleighschool/epson-exporter/issues/29)) ([1c4a31c](https://github.com/woodleighschool/epson-exporter/commit/1c4a31c38fad3ba3c20e1c0c179b3259896c8909))
+
+
+### Miscellaneous Chores
+
+* align ignore rules ([d7e1d7f](https://github.com/woodleighschool/epson-exporter/commit/d7e1d7f5f6a6cc26a3323405d070cbe411fabf2c))
+* align repository conventions ([71f7cc5](https://github.com/woodleighschool/epson-exporter/commit/71f7cc593a047320791f613f0ebfb5eb4fe30f8d))
+* **mise:** update tool oxfmt (0.64.0 → 0.65.0) ([#30](https://github.com/woodleighschool/epson-exporter/issues/30)) ([564bcaa](https://github.com/woodleighschool/epson-exporter/commit/564bcaa06c3676a20c983ade8935c7ec6071ccce))
+* **release-please:** sync configuration ([2ed36d2](https://github.com/woodleighschool/epson-exporter/commit/2ed36d29dd79fcb6e0fd3e2720778ea8dd7417b5))
+
 ## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/0.1.4...0.1.5) (2026-08-21)
 
 
