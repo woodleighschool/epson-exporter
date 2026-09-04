@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/0.1.6...0.1.7) (2026-09-04)
+
+
+### Continuous Integration
+
+* **github-action:** update action jdx/mise-action (v4.2.5 → v4.3.0) ([#32](https://github.com/woodleighschool/epson-exporter/issues/32)) ([3cc9831](https://github.com/woodleighschool/epson-exporter/commit/3cc98312f7f14152d1a74487c3defa0e44b33bce))
+
+
+### Miscellaneous Chores
+
+* fresh mise lock ([b65b130](https://github.com/woodleighschool/epson-exporter/commit/b65b130e1c3b7a6c852302347636b82b9f421552))
+* **mise:** update tool lefthook (2.1.11 → 2.1.12) ([#36](https://github.com/woodleighschool/epson-exporter/issues/36)) ([274ac69](https://github.com/woodleighschool/epson-exporter/commit/274ac694c9700af51e84870124b34f75acda8337))
+* **mise:** update tool oxfmt (0.65.0 → 0.66.0) ([#39](https://github.com/woodleighschool/epson-exporter/issues/39)) ([5d93a08](https://github.com/woodleighschool/epson-exporter/commit/5d93a08be49dbc9484d575b793f6d424b4e6b19d))
+* **mise:** update tool zizmor (1.29.0 → 1.30.0) ([#38](https://github.com/woodleighschool/epson-exporter/issues/38)) ([c768bac](https://github.com/woodleighschool/epson-exporter/commit/c768bac5eb4d7d2c3cce1c8b2ba5fd074ed42028))
+
 ## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/0.1.5...0.1.6) (2026-08-27)
 
 
