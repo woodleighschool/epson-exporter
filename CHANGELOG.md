@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/0.1.6...0.1.7) (2026-09-10)
+
+
+### Features
+
+* **go:** update module golang.org/x/net (v0.58.0 → v0.59.0) ([#40](https://github.com/woodleighschool/epson-exporter/issues/40)) ([63086d7](https://github.com/woodleighschool/epson-exporter/commit/63086d7d5600466dcce0aa60396cfa077bd8f21b))
+* **go:** update prometheus group ([#35](https://github.com/woodleighschool/epson-exporter/issues/35)) ([1e75cee](https://github.com/woodleighschool/epson-exporter/commit/1e75ceed0f0f329517ca7906ac60fd33f467e78a))
+
+
+### Bug Fixes
+
+* **container:** update image golang (1.27.0 → 1.27.1) ([#37](https://github.com/woodleighschool/epson-exporter/issues/37)) ([5068fa2](https://github.com/woodleighschool/epson-exporter/commit/5068fa288d84cd819899618575ac6cc1c8246abf))
+
+
+### Continuous Integration
+
+* **github-action:** update action jdx/mise-action (v4.2.5 → v4.3.0) ([#32](https://github.com/woodleighschool/epson-exporter/issues/32)) ([3cc9831](https://github.com/woodleighschool/epson-exporter/commit/3cc98312f7f14152d1a74487c3defa0e44b33bce))
+* skip release metadata checks and name Go jobs ([7fdd143](https://github.com/woodleighschool/epson-exporter/commit/7fdd143905bc473527cb6da5d4e875cc5c32a8a9))
+
+
+### Miscellaneous Chores
+
+* fresh mise lock ([b65b130](https://github.com/woodleighschool/epson-exporter/commit/b65b130e1c3b7a6c852302347636b82b9f421552))
+* **mise:** update go toolchain ([#34](https://github.com/woodleighschool/epson-exporter/issues/34)) ([cce2ff0](https://github.com/woodleighschool/epson-exporter/commit/cce2ff006d3c0db67c5ba4e6c1a18a6393e2b912))
+* **mise:** update tool go:golang.org/x/vuln/cmd/govulncheck (1.7.0 → v1.8.0) ([#41](https://github.com/woodleighschool/epson-exporter/issues/41)) ([20c8dfc](https://github.com/woodleighschool/epson-exporter/commit/20c8dfc02f3dfb15dbdd4373c0aeb2d70c3a80e9))
+* **mise:** update tool lefthook (2.1.11 → 2.1.12) ([#36](https://github.com/woodleighschool/epson-exporter/issues/36)) ([274ac69](https://github.com/woodleighschool/epson-exporter/commit/274ac694c9700af51e84870124b34f75acda8337))
+* **mise:** update tool oxfmt (0.65.0 → 0.66.0) ([#39](https://github.com/woodleighschool/epson-exporter/issues/39)) ([5d93a08](https://github.com/woodleighschool/epson-exporter/commit/5d93a08be49dbc9484d575b793f6d424b4e6b19d))
+* **mise:** update tool zizmor (1.29.0 → 1.30.0) ([#38](https://github.com/woodleighschool/epson-exporter/issues/38)) ([c768bac](https://github.com/woodleighschool/epson-exporter/commit/c768bac5eb4d7d2c3cce1c8b2ba5fd074ed42028))
+* remove redundant workflow lint task ([d70f0a7](https://github.com/woodleighschool/epson-exporter/commit/d70f0a7da828a61e0ccbe2e469fcb26379339df5))
+
 ## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/0.1.5...0.1.6) (2026-08-27)
 
 
