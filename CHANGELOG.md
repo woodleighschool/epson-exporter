@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/0.1.7...0.1.8) (2026-09-17)
+
+
+### Miscellaneous Chores
+
+* **mise:** update tool lefthook (2.1.12 → 2.1.14) ([#45](https://github.com/woodleighschool/epson-exporter/issues/45)) ([c5618f9](https://github.com/woodleighschool/epson-exporter/commit/c5618f940505550c040da78ce873cb005ace2fe3))
+* **mise:** update tool oxfmt (0.66.0 → 0.67.0) ([#42](https://github.com/woodleighschool/epson-exporter/issues/42)) ([ae45cfb](https://github.com/woodleighschool/epson-exporter/commit/ae45cfb17eba8b7126522c10037a42f721d48d7f))
+* **mise:** update tool oxfmt (0.67.0 → 0.68.0) ([#46](https://github.com/woodleighschool/epson-exporter/issues/46)) ([6cadfb5](https://github.com/woodleighschool/epson-exporter/commit/6cadfb52a890f1039da29fc09af998117ec7000f))
+* **mise:** update tool zizmor (1.30.0 → 1.30.1) ([#44](https://github.com/woodleighschool/epson-exporter/issues/44)) ([4b607a5](https://github.com/woodleighschool/epson-exporter/commit/4b607a56846c0311a733adcce9c7a1dae73e5c84))
+
 ## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/0.1.6...0.1.7) (2026-09-10)
 
 
