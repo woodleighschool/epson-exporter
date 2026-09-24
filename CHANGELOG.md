@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/0.1.7...0.1.8) (2026-09-24)
+
+
+### Features
+
+* **go:** update prometheus group ([#51](https://github.com/woodleighschool/epson-exporter/issues/51)) ([4a34d24](https://github.com/woodleighschool/epson-exporter/commit/4a34d2441cc25819caed4d20e287df4ea0e4ee49))
+
+
+### Miscellaneous Chores
+
+* **github-action:** Update action home-operations/.github/actions/workflow-lint (v1.0.3 → v1.0.4) ([#48](https://github.com/woodleighschool/epson-exporter/issues/48)) ([f5b1339](https://github.com/woodleighschool/epson-exporter/commit/f5b1339ceeb0d8ec291703f866d9f4dc4b38ba31))
+* **github-action:** update action ubuntu (24.04 → 26.04) ([#47](https://github.com/woodleighschool/epson-exporter/issues/47)) ([b59eedc](https://github.com/woodleighschool/epson-exporter/commit/b59eedc5bf376a85ab22d74b487904670efc16b3))
+* **mise:** update tool lefthook (2.1.12 → 2.1.14) ([#45](https://github.com/woodleighschool/epson-exporter/issues/45)) ([c5618f9](https://github.com/woodleighschool/epson-exporter/commit/c5618f940505550c040da78ce873cb005ace2fe3))
+* **mise:** update tool npm:@commitlint/cli (21.2.2 → 21.2.3) ([#49](https://github.com/woodleighschool/epson-exporter/issues/49)) ([6d443c7](https://github.com/woodleighschool/epson-exporter/commit/6d443c734b6630d5e09278d156465818866afc09))
+* **mise:** update tool oxfmt (0.66.0 → 0.67.0) ([#42](https://github.com/woodleighschool/epson-exporter/issues/42)) ([ae45cfb](https://github.com/woodleighschool/epson-exporter/commit/ae45cfb17eba8b7126522c10037a42f721d48d7f))
+* **mise:** update tool oxfmt (0.67.0 → 0.68.0) ([#46](https://github.com/woodleighschool/epson-exporter/issues/46)) ([6cadfb5](https://github.com/woodleighschool/epson-exporter/commit/6cadfb52a890f1039da29fc09af998117ec7000f))
+* **mise:** update tool oxfmt (0.68.0 → 0.69.0) ([#50](https://github.com/woodleighschool/epson-exporter/issues/50)) ([beeb052](https://github.com/woodleighschool/epson-exporter/commit/beeb05205c89e1485550745cc0993ce61407a0b5))
+* **mise:** update tool oxfmt (0.69.0 → 0.70.0) ([#52](https://github.com/woodleighschool/epson-exporter/issues/52)) ([bca0a3e](https://github.com/woodleighschool/epson-exporter/commit/bca0a3e0c3bb5ed765437f0ed8a026ca55c7a5af))
+* **mise:** update tool zizmor (1.30.0 → 1.30.1) ([#44](https://github.com/woodleighschool/epson-exporter/issues/44)) ([4b607a5](https://github.com/woodleighschool/epson-exporter/commit/4b607a56846c0311a733adcce9c7a1dae73e5c84))
+
 ## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/0.1.6...0.1.7) (2026-09-10)
 
 
