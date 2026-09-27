@@ -21,3 +21,6 @@ config.yml
 .AppleDouble
 .LSOverride
 ._*
+
+# Generated dependency licenses
+/third_party_licenses/
