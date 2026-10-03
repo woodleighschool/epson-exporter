@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.9](https://github.com/woodleighschool/epson-exporter/compare/0.1.8...0.1.9) (2026-10-03)
+
+
+### Miscellaneous Chores
+
+* **github-action:** update action jdx/mise-action (v4.3.0 → v5.0.0) ([#61](https://github.com/woodleighschool/epson-exporter/issues/61)) ([5e94a40](https://github.com/woodleighschool/epson-exporter/commit/5e94a400bf6b8d79ffbc21140966ca46b3b9d42e))
+* **mise:** update tool lefthook (2.1.14 → 2.1.15) ([#62](https://github.com/woodleighschool/epson-exporter/issues/62)) ([844d91e](https://github.com/woodleighschool/epson-exporter/commit/844d91eaab9f008f4a841b342671fbef18ac8438))
+* **mise:** update tool oxfmt (0.70.0 → 0.71.0) ([#60](https://github.com/woodleighschool/epson-exporter/issues/60)) ([3b0e59f](https://github.com/woodleighschool/epson-exporter/commit/3b0e59f0772455dd89e2fa9bd2cd47ad3ed71785))
+
 ## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/0.1.7...0.1.8) (2026-10-01)
 
 
