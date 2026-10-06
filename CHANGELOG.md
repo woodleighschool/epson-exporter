@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/0.1.7...0.1.8) (2026-10-01)
+## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/v0.1.7...v0.1.8) (2026-10-01)
 
 
 ### Features
@@ -31,7 +31,7 @@
 * **mise:** update tool oxfmt (0.69.0 → 0.70.0) ([#52](https://github.com/woodleighschool/epson-exporter/issues/52)) ([bca0a3e](https://github.com/woodleighschool/epson-exporter/commit/bca0a3e0c3bb5ed765437f0ed8a026ca55c7a5af))
 * **mise:** update tool zizmor (1.30.0 → 1.30.1) ([#44](https://github.com/woodleighschool/epson-exporter/issues/44)) ([4b607a5](https://github.com/woodleighschool/epson-exporter/commit/4b607a56846c0311a733adcce9c7a1dae73e5c84))
 
-## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/0.1.6...0.1.7) (2026-09-10)
+## [0.1.7](https://github.com/woodleighschool/epson-exporter/compare/v0.1.6...v0.1.7) (2026-09-10)
 
 
 ### Features
@@ -61,7 +61,7 @@
 * **mise:** update tool zizmor (1.29.0 → 1.30.0) ([#38](https://github.com/woodleighschool/epson-exporter/issues/38)) ([c768bac](https://github.com/woodleighschool/epson-exporter/commit/c768bac5eb4d7d2c3cce1c8b2ba5fd074ed42028))
 * remove redundant workflow lint task ([d70f0a7](https://github.com/woodleighschool/epson-exporter/commit/d70f0a7da828a61e0ccbe2e469fcb26379339df5))
 
-## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/0.1.5...0.1.6) (2026-08-27)
+## [0.1.6](https://github.com/woodleighschool/epson-exporter/compare/v0.1.5...v0.1.6) (2026-08-27)
 
 
 ### Features
@@ -92,7 +92,7 @@
 * **mise:** update tool oxfmt (0.64.0 → 0.65.0) ([#30](https://github.com/woodleighschool/epson-exporter/issues/30)) ([564bcaa](https://github.com/woodleighschool/epson-exporter/commit/564bcaa06c3676a20c983ade8935c7ec6071ccce))
 * **release-please:** sync configuration ([2ed36d2](https://github.com/woodleighschool/epson-exporter/commit/2ed36d29dd79fcb6e0fd3e2720778ea8dd7417b5))
 
-## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/0.1.4...0.1.5) (2026-08-21)
+## [0.1.5](https://github.com/woodleighschool/epson-exporter/compare/v0.1.4...v0.1.5) (2026-08-21)
 
 
 ### Features
@@ -107,7 +107,7 @@
 * **renovate:** wait for complete toolchain groups ([e259bda](https://github.com/woodleighschool/epson-exporter/commit/e259bda755ed8e5c1ae1358525ee97d4f06d06ab))
 * **tooling:** group toolchain updates ([1675e87](https://github.com/woodleighschool/epson-exporter/commit/1675e878db05308d90528cad41809be3ce06d36f))
 
-## [0.1.4](https://github.com/woodleighschool/epson-exporter/compare/0.1.3...0.1.4) (2026-08-04)
+## [0.1.4](https://github.com/woodleighschool/epson-exporter/compare/v0.1.3...v0.1.4) (2026-08-04)
 
 
 ### Features
@@ -127,7 +127,7 @@
 
 * apply Go lint fixes ([91a75df](https://github.com/woodleighschool/epson-exporter/commit/91a75df43056a9ff7142727561340955e2c63fa1))
 
-## [0.1.3](https://github.com/woodleighschool/epson-exporter/compare/v0.1.2...0.1.3) (2026-07-28)
+## [0.1.3](https://github.com/woodleighschool/epson-exporter/compare/v0.1.2...v0.1.3) (2026-07-28)
 
 
 ### Features
