@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.9](https://github.com/woodleighschool/epson-exporter/compare/v0.1.8...v0.1.9) (2026-10-10)
+
+
+### Bug Fixes
+
+* **build:** unify Go toolchain and license tool versions ([b72e7aa](https://github.com/woodleighschool/epson-exporter/commit/b72e7aacb60b7104b3e9b18b1bc9411db1fd7bf9))
+* **go:** update module golang.org/x/net (v0.60.0 → v0.61.0) ([#72](https://github.com/woodleighschool/epson-exporter/issues/72)) ([f91029f](https://github.com/woodleighschool/epson-exporter/commit/f91029f9b0fb7ed6584b2eeaa8033b364ddbd36e))
+* **go:** update prometheus group ([#69](https://github.com/woodleighschool/epson-exporter/issues/69)) ([370754d](https://github.com/woodleighschool/epson-exporter/commit/370754d2b3d10e2adb19584d784ae3524c4a27b3))
+
 ## [0.1.8](https://github.com/woodleighschool/epson-exporter/compare/v0.1.7...v0.1.8) (2026-10-01)
 
 
