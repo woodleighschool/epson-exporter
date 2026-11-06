@@ -23,14 +23,17 @@ RUN go mod download
 ARG GO_LICENSES_VERSION
 RUN go install github.com/google/go-licenses/v2@${GO_LICENSES_VERSION}
 
+ENV CGO_ENABLED=0 \
+    GOOS=${TARGETOS} \
+    GOARCH=${TARGETARCH}
+
 COPY cmd/ cmd/
 COPY internal/ internal/
 
-RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} \
-    go-licenses save ./cmd/epson_exporter --save_path third_party_licenses --ignore github.com/woodleighschool/epson-exporter --force
+COPY .mise/tasks/notices .mise/tasks/notices
+RUN ./.mise/tasks/notices
 
-RUN CGO_ENABLED=0 GOOS=${TARGETOS:-linux} GOARCH=${TARGETARCH} \
-    go build -trimpath \
+RUN go build -trimpath \
     -ldflags "-s -w -X github.com/prometheus/common/version.Version=${VERSION#v} -X github.com/prometheus/common/version.Revision=${COMMIT} -X github.com/prometheus/common/version.Branch=${BRANCH} -X github.com/prometheus/common/version.BuildUser=docker -X github.com/prometheus/common/version.BuildDate=${BUILD_DATE}" \
     -o epson_exporter ./cmd/epson_exporter
 RUN upx --best --lzma epson_exporter
