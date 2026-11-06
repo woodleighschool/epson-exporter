@@ -7,7 +7,7 @@ import (
 	"time"
 
 	promconfig "github.com/prometheus/common/config"
-	"go.yaml.in/yaml/v3"
+	"go.yaml.in/yaml/v4"
 )
 
 const (
