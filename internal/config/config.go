@@ -64,7 +64,7 @@ func Default() Config {
 
 func Load(data []byte) (Config, error) {
 	var cfg Config
-	if err := yaml.Unmarshal(data, &cfg); err != nil {
+	if err := yaml.Load(data, &cfg, yaml.WithKnownFields()); err != nil {
 		return Config{}, err
 	}
 	if len(cfg.Modules) == 0 {
