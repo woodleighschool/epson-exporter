@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.1.10](https://github.com/woodleighschool/epson-exporter/compare/v0.1.9...v0.1.10) (2026-11-11)
+
+
+### Features
+
+* **config:** reject unknown config keys ([1adac50](https://github.com/woodleighschool/epson-exporter/commit/1adac5028e4132cb22a608ec6fc30d2455252509))
+
+
+### Bug Fixes
+
+* **go:** update module go.yaml.in/yaml/v3 (v3.0.5 → v3.0.6) ([#100](https://github.com/woodleighschool/epson-exporter/issues/100)) ([19948eb](https://github.com/woodleighschool/epson-exporter/commit/19948ebb138cd0f740e87fb314d4704d7d07ff6e))
+* **go:** update module go.yaml.in/yaml/v3 (v3.0.6 → v4.0.0) ([#102](https://github.com/woodleighschool/epson-exporter/issues/102)) ([32ce710](https://github.com/woodleighschool/epson-exporter/commit/32ce710d7bb498cd0c4cf961f61fd9ec51b678fe))
+* **go:** update module golang.org/x/net (v0.61.0 → v0.62.0) ([#92](https://github.com/woodleighschool/epson-exporter/issues/92)) ([75c25aa](https://github.com/woodleighschool/epson-exporter/commit/75c25aaadc3d9e049c3a09af3a1ab57b199c905b))
+* **go:** update prometheus group ([#94](https://github.com/woodleighschool/epson-exporter/issues/94)) ([ea3278a](https://github.com/woodleighschool/epson-exporter/commit/ea3278ae9cf75d24899cfb41ba0778020c4088dd))
+* **go:** update prometheus group ([#98](https://github.com/woodleighschool/epson-exporter/issues/98)) ([1a2cc82](https://github.com/woodleighschool/epson-exporter/commit/1a2cc823d3678c1dcc14abfa2fa782e077d5897a))
+
 ## [0.1.9](https://github.com/woodleighschool/epson-exporter/compare/v0.1.8...v0.1.9) (2026-10-22)
 
 
