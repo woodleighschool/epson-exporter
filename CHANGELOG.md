@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/woodleighschool/epson-exporter/compare/v0.1.10...v0.1.11) (2026-11-18)
+
+
+### Bug Fixes
+
+* **go:** update prometheus group ([#106](https://github.com/woodleighschool/epson-exporter/issues/106)) ([d4738b5](https://github.com/woodleighschool/epson-exporter/commit/d4738b5ec239064126e35c5b7ad238130e377d42))
+
 ## [0.1.10](https://github.com/woodleighschool/epson-exporter/compare/v0.1.9...v0.1.10) (2026-11-11)
 
 
